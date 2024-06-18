@@ -9,8 +9,6 @@ q
 Asrc/HyundaiTracker.Core/ContributorAggregate/ContributorStatus.cs,c/5/c53c448152e86d423955a9d341866fffe5d4baf6
 =
 .editorconfig,6/2/626a747c8694eaae66f2afb3d1a745b045782c70
-k
-;src/HyundaiTracker.Core/VehicleAggregate/TrackingHistory.cs,c/8/c8b0a9316775741022ff3ea6416b2b6c10c3ae30
 i
 9src/HyundaiTracker.Core/VehicleAggregate/VehicleStatus.cs,1/5/15db684293ad466b2c512f014d100d2bc6a188b7
 i

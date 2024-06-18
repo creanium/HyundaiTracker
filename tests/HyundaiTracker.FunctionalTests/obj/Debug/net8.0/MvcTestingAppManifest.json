@@ -1,6 +1,0 @@
-{
-  "HyundaiTracker.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/creanium\/git\/HyundaiTracker\/src\/HyundaiTracker.Core",
-  "HyundaiTracker.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/creanium\/git\/HyundaiTracker\/src\/HyundaiTracker.Infrastructure",
-  "HyundaiTracker.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/creanium\/git\/HyundaiTracker\/src\/HyundaiTracker.UseCases",
-  "HyundaiTracker.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/creanium\/git\/HyundaiTracker\/src\/HyundaiTracker.Web"
-}
