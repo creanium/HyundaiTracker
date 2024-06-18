@@ -1,15 +1,26 @@
 ﻿using System.Text;
 using Ardalis.GuardClauses;
 using Ardalis.SharedKernel;
+using StrictId;
 
 namespace HyundaiTracker.Core.VehicleAggregate;
 
-public class Vehicle(string vin) : EntityBase, IAggregateRoot
+public class Vehicle : EntityBase<Id<Vehicle>>, IAggregateRoot
 {
-    public string Vin { get; } = Guard.Against.LengthOutOfRange(vin, 17, 17, nameof(vin));
+    public string Vin { get; private set; } 
     public string? Make { get; private set; }
     public string? Model { get; private set; }
     public string? Year { get; private set; }
+
+    public Vehicle(string vin)
+    {
+        Guard.Against.NullOrWhiteSpace(vin);
+        Guard.Against.StringTooShort(vin, 17);
+        Guard.Against.StringTooLong(vin, 17);
+        Guard.Against.NullOrInvalidInput(vin, nameof(vin), DaleNewman.Vin.IsValid);
+        
+        Vin = vin;
+    }
 
     private readonly List<TrackingEvent> _trackingEvents = [];
     public IReadOnlyCollection<TrackingEvent> TrackingEvents => _trackingEvents.AsReadOnly();
@@ -57,7 +68,7 @@ public class Vehicle(string vin) : EntityBase, IAggregateRoot
         }
         else
         {
-            details.Append(vin);
+            details.Append(Vin);
         }
 
         return details.ToString();

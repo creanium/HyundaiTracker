@@ -34,6 +34,7 @@
 
     <ItemGroup>
         <Folder Include="Core\Services\"/>
+        <Folder Include="Core\VehicleAggregate\" />
     </ItemGroup>
 
     <ItemGroup>

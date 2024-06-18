@@ -9,6 +9,8 @@
         <PackageReference Include="Ardalis.Specification"/>
         <PackageReference Include="MediatR"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions"/>
+        <PackageReference Include="StrictId" />
+        <PackageReference Include="Vin" />
     </ItemGroup>
 
 </Project>
