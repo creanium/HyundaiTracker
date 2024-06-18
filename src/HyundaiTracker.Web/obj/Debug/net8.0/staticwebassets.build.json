@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "RPVYh36lL3sXDWF3TQanSJXKQyC7U+I9hBc6IWFBknU=",
+  "Source": "HyundaiTracker.Web",
+  "BasePath": "_content/HyundaiTracker.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "HyundaiTracker.Web/wwwroot",
+      "Source": "HyundaiTracker.Web",
+      "ContentRoot": "/Users/creanium/git/HyundaiTracker/src/HyundaiTracker.Web/wwwroot/",
+      "BasePath": "_content/HyundaiTracker.Web",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/creanium/git/HyundaiTracker/src/HyundaiTracker.Web/wwwroot/.gitkeep",
+      "SourceId": "HyundaiTracker.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/creanium/git/HyundaiTracker/src/HyundaiTracker.Web/wwwroot/",
+      "BasePath": "_content/HyundaiTracker.Web",
+      "RelativePath": ".gitkeep",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.gitkeep"
+    }
+  ]
+}
