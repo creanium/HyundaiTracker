@@ -28,7 +28,7 @@ public class Vehicle : EntityBase<Id<Vehicle>>, IAggregateRoot
     private TrackingEvent? LastTrackingEvent => TrackingEvents.MaxBy(x => x.Occurred);
 
     public VehicleStatus Status => LastTrackingEvent?.Status ?? VehicleStatus.Unknown;
-    public DateTime? PlannedDeliveryDate => LastTrackingEvent?.PlannedDeliveryDate;
+    public DateOnly? PlannedDeliveryDate => LastTrackingEvent?.PlannedDeliveryDate;
 
     public void AddTrackingEvent(TrackingEvent trackingEvent)
     {

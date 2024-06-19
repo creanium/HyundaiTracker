@@ -32,6 +32,11 @@ public static class InfrastructureServiceExtensions
 
         services.Configure<MailserverConfiguration>(config.GetSection("Mailserver"));
 
+        services.AddHttpClient<IVehicleInfoService>(client =>
+        {
+            client.BaseAddress = new Uri("https://www.hyundaiusa.com/var/hyundai/services/");
+        });
+        
         logger.LogInformation("{Project} services registered", "Infrastructure");
 
         return services;
