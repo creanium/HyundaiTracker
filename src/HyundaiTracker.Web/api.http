@@ -41,3 +41,8 @@ Content-Type: application/json
 @id_to_delete=1
 DELETE {{host}}:{{port}}/Contributors/{{id_to_delete}}
 
+###
+
+// Look up delivery details for a vehicle
+@vin_to_lookup=KM8KRDDF4RU308813
+GET {{host}}:{{port}}/Vehicle/{{vin_to_lookup}}/DeliveryStatus

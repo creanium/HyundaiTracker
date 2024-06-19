@@ -21,8 +21,4 @@
         <ProjectReference Include="..\HyundaiTracker.Core\HyundaiTracker.Core.csproj"/>
         <ProjectReference Include="..\HyundaiTracker.UseCases\HyundaiTracker.UseCases.csproj"/>
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Interfaces\" />
-    </ItemGroup>
 </Project>

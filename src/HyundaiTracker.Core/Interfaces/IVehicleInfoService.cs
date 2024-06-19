@@ -4,5 +4,5 @@ namespace HyundaiTracker.Core.Interfaces;
 
 public interface IVehicleInfoService
 {
-    Task<VehicleDetails> GetVehicleDetails(string vin);
+    Task<VehicleDetails?> GetVehicleDetails(string vin);
 }

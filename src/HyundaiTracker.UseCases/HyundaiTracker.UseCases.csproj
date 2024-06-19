@@ -10,4 +10,8 @@
         <ProjectReference Include="..\HyundaiTracker.Core\HyundaiTracker.Core.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Vehicle\Create\" />
+    </ItemGroup>
+
 </Project>
