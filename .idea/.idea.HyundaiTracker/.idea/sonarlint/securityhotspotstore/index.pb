@@ -129,3 +129,5 @@ Q
 !src/HyundaiTracker.Web/Program.cs,9/3/93129c1e711737850e1c27cbcf0bdce62d41df90
 u
 Esrc/HyundaiTracker.UseCases/Contributors/Get/GetContributorHandler.cs,5/e/5edc0e298800b49c9752ca3dd80cf3560bc4e40d
+W
+'src/HyundaiTracker.Web/appsettings.json,3/b/3b51c62c1ae947bcf9cfa9dd4c9c9f02659cb7ff

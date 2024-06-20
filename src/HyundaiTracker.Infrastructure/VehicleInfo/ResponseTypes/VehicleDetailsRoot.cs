@@ -8,5 +8,5 @@ public class VehicleDetailsRoot
     public string? Status { get; set; }
 
     [JsonPropertyName("data")]
-    public List<VehicleDetailData> Data { get; } = [];
+    public List<VehicleDetailData>? Data { get; set; }
 }
