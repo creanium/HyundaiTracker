@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HyundaiTracker.Infrastructure.Data.Config;
 
-public class VehicleConfiguration : IEntityTypeConfiguration<Vehicle>
+public class VehicleConfiguration : BaseEntityConfiguration<Vehicle>
 {
-    public void Configure(EntityTypeBuilder<Vehicle> builder)
+    protected override void Configure(EntityTypeBuilder<Vehicle> builder)
     {
         builder.HasIndex(v => v.Vin).IsUnique();
 

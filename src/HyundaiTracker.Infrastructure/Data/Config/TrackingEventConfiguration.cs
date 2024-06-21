@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HyundaiTracker.Infrastructure.Data.Config;
 
-public class TrackingEventConfiguration : IEntityTypeConfiguration<TrackingEvent>
+public class TrackingEventConfiguration : BaseEntityConfiguration<TrackingEvent>
 {
-    public void Configure(EntityTypeBuilder<TrackingEvent> builder)
+    protected override void Configure(EntityTypeBuilder<TrackingEvent> builder)
     {
         builder.HasIndex(e => e.Occurred);
 

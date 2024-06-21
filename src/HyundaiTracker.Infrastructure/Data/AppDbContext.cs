@@ -2,23 +2,22 @@
 using Ardalis.SharedKernel;
 using HyundaiTracker.Core.VehicleAggregate;
 using Microsoft.EntityFrameworkCore;
+using StrictId.EFCore;
 
 namespace HyundaiTracker.Infrastructure.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions<AppDbContext> options, IDomainEventDispatcher? dispatcher) : DbContext(options)
 {
-    private readonly IDomainEventDispatcher? _dispatcher;
-
-    public AppDbContext(DbContextOptions<AppDbContext> options,
-        IDomainEventDispatcher? dispatcher)
-        : base(options)
-    {
-        _dispatcher = dispatcher;
-    }
-
     public DbSet<Vehicle> Vehicles => Set<Vehicle>();
     public DbSet<TrackingEvent> TrackingEvents => Set<TrackingEvent>();
 
+    protected override void ConfigureConventions (ModelConfigurationBuilder builder)
+    {
+        base.ConfigureConventions(builder);
+        
+        builder.ConfigureStrictId();
+    }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -30,7 +29,7 @@ public class AppDbContext : DbContext
         int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
         // ignore events if no dispatcher provided
-        if (_dispatcher == null) return result;
+        if (dispatcher == null) return result;
 
         // dispatch events only if save was successful
         var entitiesWithEvents = ChangeTracker.Entries<EntityBase>()
@@ -38,7 +37,7 @@ public class AppDbContext : DbContext
             .Where(e => e.DomainEvents.Any())
             .ToArray();
 
-        await _dispatcher.DispatchAndClearEvents(entitiesWithEvents);
+        await dispatcher.DispatchAndClearEvents(entitiesWithEvents);
 
         return result;
     }

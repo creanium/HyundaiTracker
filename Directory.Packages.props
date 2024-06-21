@@ -37,6 +37,7 @@
     <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageVersion Include="SQLite" Version="3.13.0" />
     <PackageVersion Include="StrictId" Version="1.1.0" />
+    <PackageVersion Include="StrictId.EFCore" Version="1.1.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageVersion Include="Vin" Version="0.0.5-beta" />

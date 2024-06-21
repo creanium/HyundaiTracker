@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using Ardalis.GuardClauses;
 using Ardalis.SharedKernel;
+using HyundaiTracker.Core.VehicleAggregate.Events;
 using StrictId;
 
 namespace HyundaiTracker.Core.VehicleAggregate;
@@ -34,6 +35,8 @@ public class Vehicle : EntityBase<Id<Vehicle>>, IAggregateRoot
     {
         Guard.Against.Null(trackingEvent);
         _trackingEvents.Add(trackingEvent);
+        
+        base.RegisterDomainEvent(new NewTrackingEventAddedEvent(this, trackingEvent));
     }
 
     public void UpdateDetails(string? year, string? make, string? model)
