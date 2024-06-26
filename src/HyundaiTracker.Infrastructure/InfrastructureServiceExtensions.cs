@@ -26,7 +26,7 @@ public static class InfrastructureServiceExtensions
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlite(connectionString));
         
-        services.AddHttpClient<IVehicleInfoService, VehicleInfoService>(client =>
+        services.AddHttpClient<IVehicleInfoService, HyundaiVehicleInfoService>(client =>
         {
             client.BaseAddress = new Uri("https://www.hyundaiusa.com/var/hyundai/services/");
             client.DefaultRequestHeaders.Referrer = new Uri($"https://www.hyundaiusa.com/us/en/inventory-search/details?model=Ioniq%205&year=2024");

@@ -28,6 +28,6 @@ public class Vehicle
     [JsonPropertyName("inventoryStatus")]
     public string? InventoryStatus { get; set; }
 
-    [JsonPropertyName("PlannedDeliveryDate")]
+    [JsonPropertyName("plannedDeliveryDate")]
     public DateTime? PlannedDeliveryDate { get; set; }
 }

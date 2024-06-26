@@ -35,6 +35,8 @@
     <PackageVersion Include="NSubstitute" Version="5.1.0" />
     <PackageVersion Include="ReportGenerator" Version="5.2.2" />
     <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
     <PackageVersion Include="SQLite" Version="3.13.0" />
     <PackageVersion Include="StrictId" Version="1.1.0" />
     <PackageVersion Include="StrictId.EFCore" Version="1.1.0" />

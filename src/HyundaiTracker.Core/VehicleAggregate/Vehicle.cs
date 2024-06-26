@@ -26,10 +26,32 @@ public class Vehicle : EntityBase<Id<Vehicle>>, IAggregateRoot
     private readonly List<TrackingEvent> _trackingEvents = [];
     public IReadOnlyCollection<TrackingEvent> TrackingEvents => _trackingEvents.AsReadOnly();
 
-    private TrackingEvent? LastTrackingEvent => TrackingEvents.MaxBy(x => x.Occurred);
+    public VehicleStatus Status { get; private set; } = VehicleStatus.Unknown;
+    public DateOnly? PlannedDeliveryDate { get; private set; }
+    public DateTimeOffset? StatusLastReceived { get; private set; }
 
-    public VehicleStatus Status => LastTrackingEvent?.Status ?? VehicleStatus.Unknown;
-    public DateOnly? PlannedDeliveryDate => LastTrackingEvent?.PlannedDeliveryDate;
+    public void StatusReceived()
+    {
+        StatusLastReceived = DateTimeOffset.UtcNow;
+    }
+    
+    public void UpdateDelivery(VehicleStatus status, DateOnly plannedDeliveryDate)
+    {
+        var oldStatus = Status;
+        var oldPlannedDeliveryDate = PlannedDeliveryDate;
+        
+        if (oldStatus == status && oldPlannedDeliveryDate == plannedDeliveryDate)
+        {
+            return;
+        }
+        
+        Status = status;
+        PlannedDeliveryDate = plannedDeliveryDate;
+
+        base.RegisterDomainEvent(new VehicleDeliveryUpdatedEvent(this, oldStatus, oldPlannedDeliveryDate, status, plannedDeliveryDate));
+
+        AddTrackingEvent(new TrackingEvent(status, plannedDeliveryDate));
+    }
 
     public void AddTrackingEvent(TrackingEvent trackingEvent)
     {

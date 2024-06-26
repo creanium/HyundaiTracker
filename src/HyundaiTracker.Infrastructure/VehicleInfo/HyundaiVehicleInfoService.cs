@@ -1,15 +1,13 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json;
+﻿using System.Text.Json;
 using HyundaiTracker.Core.DataObjects;
 using HyundaiTracker.Core.Interfaces;
 using HyundaiTracker.Core.VehicleAggregate;
 using HyundaiTracker.Infrastructure.VehicleInfo.ResponseTypes;
 using Microsoft.Extensions.Logging;
-using Vehicle = HyundaiTracker.Infrastructure.VehicleInfo.ResponseTypes.Vehicle;
 
 namespace HyundaiTracker.Infrastructure.VehicleInfo;
 
-public class VehicleInfoService(HttpClient httpClient, ILogger<VehicleInfoService> logger) : IVehicleInfoService
+public class HyundaiVehicleInfoService(HttpClient httpClient, ILogger<HyundaiVehicleInfoService> logger) : IVehicleInfoService
 {
     public async Task<VehicleDetails?> GetVehicleDetails(string vin)
     {
