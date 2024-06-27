@@ -22,5 +22,10 @@ public class VehicleConfiguration : BaseEntityConfiguration<Vehicle>
 
         builder.Property(v => v.Model)
             .HasMaxLength(DataSchemaConstants.DefaultNameLength);
+        
+        builder.Property(e => e.Status)
+            .HasConversion(
+                s => s.Value,
+                s => VehicleStatus.FromValue(s));
     }
 }

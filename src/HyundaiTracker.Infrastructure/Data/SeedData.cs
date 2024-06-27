@@ -7,7 +7,7 @@ namespace HyundaiTracker.Infrastructure.Data;
 public static class SeedData
 {
     public static readonly Vehicle Kona = new("KM8HE3A67RU016674");
-    public static readonly Vehicle Ioniq5 = new("KM8KRDDF2RU308339");
+    public static readonly Vehicle Ioniq5 = new("KM8KRDDF4RU308813");
     public static readonly Vehicle Ioniq6 = new("KMHM54ACXRA079859");
     public static readonly Vehicle SantaFe = new("5NMP34G10RH005353");
 

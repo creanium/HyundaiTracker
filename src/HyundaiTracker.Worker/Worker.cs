@@ -15,7 +15,7 @@ public class Worker(ILogger<Worker> logger, IEntryPointService entryPointService
 
             await entryPointService.ExecuteAsync();
 
-            await Task.Delay(1000, stoppingToken);
+            await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
         }
     }
 }
